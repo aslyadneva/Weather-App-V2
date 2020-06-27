@@ -1,13 +1,82 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1f1f1f;
+}
+
+.Dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 1100px;
+  background-color: white;
+  position: relative;
+  box-shadow: 13px 15px 35px 20px rgba(19, 19, 19, 0.7490196078);
+}
+
+.Dashboard__image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Screen {
+  flex: 2;
+  z-index: 2;
+  color: #e8ebea;
+}
+
+.Screen__content {
+  margin: 5rem;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+.Screen__temperature {
+  font-size: 6rem;
+  font-weight: 600;
+  letter-spacing: 5px;
+  margin-right: 1rem;
+}
+
+.Screen__locationDetails {
+}
+
+.Screen__city {
+  font-size: 2.75rem;
+  font-weight: 600;
+}
+
+.Details {
+  flex: 1.5;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+}
+
+@media (min-width: 800px) {
+  .Dashboard {
+    flex-direction: row;
+  }
+
+  .Screen {
+    order: -1;
+  }
 }
